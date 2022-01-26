@@ -57,4 +57,4 @@ function watchTask() {
 exports.default = series(scssTask, jsTask, browserSyncServe, watchTask);
 
 // Gulp Build Task
-exports.build = series(scssTask, jsTask)
+exports.build = series(scssTask, jsTask);
