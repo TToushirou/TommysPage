@@ -4,6 +4,7 @@ const test = () => {
 	console.log('this is a test');
 };
 
+
 // Hamburger 
 let path = document.querySelector(".path");
 
@@ -15,7 +16,7 @@ function lerp(start, end, t){
 
 let toggle = false;
 
-let menuToggle = document.querySelector('.menu-tog');
+let navToggle = document.querySelector('.nav-tog');
 let navWrapper = document.querySelector('.wrapper');
 menuToggle.addEventListener('click', () => {
     setTimeout(() => {

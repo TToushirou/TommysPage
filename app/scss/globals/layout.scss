@@ -1,8 +1,8 @@
 @use '../util' as *;
 
-.container {
+body {
 	padding: 0 rem(24);
-	max-width: rem(1110);
+	max-width: rem(1550);
 	margin: 0 auto;
 
 	@include breakpoint(large) {

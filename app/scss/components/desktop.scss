@@ -1,0 +1,298 @@
+@use '../util' as *;
+
+// background color
+section {
+    background-color: var(--white);
+}
+
+// a styles 
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+//footer styles 
+footer {
+    background-color: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 80px;
+}
+
+// Top of site content 
+.hero {
+    background-color: var(--black);
+    height: 100vh;
+    color: var(--white);
+    font-size: rem(40);
+
+    // Hero content area
+    &__area {
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    // Hero Logo styling
+    &__socials {
+        padding-bottom: rem(200);
+        margin-right: rem(30);
+    }
+
+    // Hero text styling / button
+    &__text {
+        margin-left: rem(80);
+        margin-bottom: rem(200);
+    }
+
+    &__button {
+        width: rem(175);
+        height: rem(55);
+        border-radius: rem(30);
+        background-color: var(--orange);
+        text-align: center;
+        font-size: rem(20);
+        padding-top: rem(10);
+        margin-top: rem(20);
+    }
+
+    &__button:hover {
+        background-color: var(--orange-state);
+        cursor: pointer;
+    }
+    
+    &__button:active {
+        background-color: #A9A9A9;
+        color: #808080;
+    }
+
+    &--header {
+        font-size: rem(85);
+        font-family: var(--font-header);
+        padding-bottom: rem(10);
+        margin: 0;
+    }
+
+    &--text {
+        font-size: rem(30);
+    }
+}
+
+/////////////////////////////////////////
+
+// Nav Stylings 
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+        height: rem(80);
+        margin: rem(30);
+    }
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    width: rem(500);
+    justify-content: space-around;
+    font-size: rem(28);
+    
+    &__li {
+        text-decoration: none;
+        margin-right: rem(10);
+    }
+
+    &__button {
+        width: rem(160);
+        height: rem(55);
+        border-radius: rem(30);
+        border: none;
+        background-color: var(--orange);
+        text-align: center;
+        font-size: rem(25);
+        
+    }
+
+    &__button:hover {
+        background-color: var(--orange-state);
+        cursor: pointer;
+    }
+    
+    &__button:active {
+        background-color: #A9A9A9;
+        color: #808080;
+    }
+
+}
+
+// Nav menu Toggler Styles 
+.nav-tog {
+    visibility: hidden;
+}
+
+.wrapper {
+    visibility: visible;
+    background-color: transparent;
+    height: auto;
+    top: 0;
+    justify-content: space-between;
+}
+
+.wrapper::after {
+    visibility: hidden;
+}
+
+// Nav Trasitions 
+.nav-tog {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 10px;
+    justify-content: space-around;
+    cursor: pointer;
+    transition: 0.5s;
+    transform: center;
+}
+  
+.nav-tog span {
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    transform-origin: center;
+    transition: 0.2s;
+}
+  
+.nav-tog span:nth-child(1) {
+    width: 100%;
+}
+  
+.nav-tog span:nth-child(2) {
+    width: 80%;
+}
+  
+.nav-tog.active span {
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 0%;
+    width: 100%;
+}
+  
+.nav-tog.active span:nth-child(1) {
+    top: 40%;
+    transform: rotate(45deg);
+}
+  
+.nav-tog.active span:nth-child(2) {
+    bottom: 40%;
+    transform: rotate(-45deg);
+}
+
+////////////////////////////////////////
+
+// About me and Project Section
+.sub {
+    display: flex;
+    justify-content: space-around;
+    padding: rem(80);
+
+    &__information {
+        color: var(--black);
+    }
+
+    &--header {
+        font-size: rem(55);
+        margin-bottom: rem(20);
+    }
+
+    &--text {
+        font-size: rem(28);
+    }
+
+    // Image Container x Styling
+    &__container {
+        display: flex;
+        align-items: center;
+    }
+
+    &__headshot {
+        width: rem(250);
+        border-radius: rem(150);
+        margin-left: rem(80);
+    }
+}
+
+// Project card Styling. 
+.sub-projects {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: rem(80);
+
+    &--header {
+        font-size: rem(50);
+        margin-bottom: rem(30);
+    }
+}
+
+.project-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.project-card {
+    width: rem(250);
+    height: rem(500);
+    box-shadow: 5px 5px 20px var(--project-shadow);
+    margin: rem(10);
+
+    &--header {
+        font-size: rem(22);
+        margin: rem(10)
+    }
+
+    &--text {
+        font-size: rem(15);
+    }
+
+}
+
+.project-image {
+    margin-top: rem(25);
+    width: rem(222);
+    height: rem(211);
+    border-radius: rem(125);
+}
+
+.project-link {
+    text-decoration: none;
+    color: var(--orange);
+}
+
+small {
+    display: flex;
+    justify-content: center;
+    font-size: rem(12);
+    margin-top: rem(5);
+}
+
+hr {
+    margin-left: rem(20);
+    margin-right: rem(20);
+}
+
+///////////////////////////////////////////////
+
+.footer {
+
+    &--header {
+        font-size: rem(55);
+        text-transform: uppercase;
+        margin-bottom: rem(15);
+    }
+
+    &--text {
+        font-size: rem(25);
+    }
+}
