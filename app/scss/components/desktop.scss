@@ -17,12 +17,15 @@ footer {
     color: var(--white);
     text-align: center;
     padding: 80px;
+    width: 100%;
+    
 }
 
 // Top of site content 
 .hero {
     background-color: var(--black);
     height: 100vh;
+    width: 100%;
     color: var(--white);
     font-size: rem(40);
 
@@ -267,7 +270,7 @@ footer {
 
 .project-link {
     text-decoration: none;
-    color: var(--orange);
+    color: var(--orange) !important;
 }
 
 small {
