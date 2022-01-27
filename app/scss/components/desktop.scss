@@ -7,8 +7,8 @@ section {
 
 // a styles 
 a {
-    text-decoration: none;
-    color: var(--white);
+    text-decoration: none !important;
+    color: var(--white) !important;
 }
 
 //footer styles 
