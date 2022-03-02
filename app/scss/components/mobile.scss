@@ -1,1 +1,371 @@
+@use '../util' as *;
 
+// Responsive Nav
+.nav__wrapper {
+    @include breakpoint-down(xxsmall) {
+        display: none;
+    }
+}
+
+.nav-open{
+    @include breakpoint-down(786) {
+        display: none;
+    }
+}
+
+.nav-close{
+    @include breakpoint-down(xsmall) {
+        display: none;
+    }
+}
+
+
+// Nav Trasitions 
+.nav__tog {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: rem(40);
+    height: rem(15);
+    justify-content: space-around;
+    cursor: pointer;
+    transition: 0.5s;
+    transform: center;
+    margin-right: rem(30);
+
+    @include breakpoint(medium) {
+        display: none;
+    }
+}
+  
+.nav__tog span {
+    height: 2px;
+    background-color: rgb(255, 255, 255);
+    transform-origin: center;
+    transition: 0.2s;
+}
+  
+.nav__tog span:nth-child(1) {
+    width: 100%;
+}
+  
+.nav__tog span:nth-child(2) {
+    width: 80%;
+}
+  
+.nav__tog.active span {
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    left: 0%;
+    width: 100%;
+}
+  
+.nav__tog.active span:nth-child(1) {
+    top: 40%;
+    transform: rotate(45deg);
+}
+  
+.nav__tog.active span:nth-child(2) {
+    bottom: 40%;
+    transform: rotate(-45deg);
+}
+
+
+
+
+
+// Mobile Design
+@include breakpoint-down(xxsmall) {
+    .hero {
+        background-color: var(--black);
+        height: 100vh;
+        width: 100%;
+        color: var(--white);
+        font-size: rem(40);
+    
+        // Tag Styles 
+        .body-open {
+            margin-left: rem(30) !important;
+        }
+    
+        .h1-close {
+            display: flex;
+            width: auto;
+            justify-content: center !important;
+        }
+    
+        .p-close {
+            display: flex;
+            width: 55%;
+            justify-content: end;
+        }
+    
+        // Hero content area
+        &__area {
+            display: flex;
+            height: 100%;
+            justify-content: space-between;
+            align-items: center;
+        }
+        // Hero Logo styling
+        &__socials {
+            padding-bottom: rem(250);
+            margin-right: rem(30);
+        }
+    
+        // Hero text styling / button
+        &__text {
+            margin-left: rem(40) !important;
+            margin-bottom: rem(464);
+        }
+    
+        &__button {
+            width: rem(160);
+            height: rem(55);
+            border-radius: rem(30);
+            background-color: var(--orange);
+            text-align: center;
+            font-size: rem(20);
+            padding-top: rem(10);
+            margin-top: rem(20);
+        }
+    
+        &__button:hover {
+            background-color: var(--orange-state);
+            cursor: pointer;
+        }
+        
+        &__button:active {
+            background-color: #A9A9A9;
+            color: #808080;
+        }
+    
+        &--header {
+            font-size: rem(60) !important;
+            font-family: var(--font-header);
+            padding-bottom: rem(10);
+            margin: 0;
+        }
+    
+        &--text {
+            font-size: rem(22) !important;
+            margin: 0;
+        }
+    }
+
+    .sub {
+        display: grid;
+        grid-template-columns: rem(220) 1fr !important;    
+
+        &--header {
+            font-size: rem(30);
+            margin-bottom: rem(20);
+        }
+    
+        &--text {
+            font-size: rem(18) !important;
+        }
+
+        &__headshot {
+            width: rem(170) !important;
+            margin-left: rem(10) !important; 
+        }
+    }
+
+    .sub-projects {
+
+        &--header {
+            font-size: rem(40);
+            margin-bottom: rem(30);
+        }
+    }
+
+    .footer {
+
+        // Tags 
+        .ft-open {
+            display: flex;
+            margin: rem(10) !important;
+        }
+        
+        .ft-close {
+            display: flex;
+            justify-content: end;
+            margin: rem(10) !important;
+        }
+    
+        .body-close {
+            display: flex;
+            justify-content: end;
+        }
+    
+        &--header {
+            font-size: rem(30);
+            text-transform: uppercase;
+            margin-bottom: rem(15);
+        }
+    
+        &--text {
+            font-size: rem(19);
+        }
+    }
+}
+
+// Tablet Design 
+@include breakpoint-down(small) {
+    body {
+        padding: 0;
+    }
+
+    // Hero Styles
+    .hero {
+        background-color: var(--black);
+        height: 100vh;
+        width: 100%;
+        color: var(--white);
+        font-size: rem(40);
+    
+        // Tag Styles 
+        .body-open {
+            margin-left: rem(30) !important;
+        }
+    
+        .h1-close {
+            display: flex;
+            width: auto;
+            justify-content: end;
+        }
+    
+        .p-close {
+            display: flex;
+            width: 55%;
+            justify-content: end;
+        }
+    
+        // Hero text styling / button
+        &__text {
+            margin-left: rem(80);
+            margin-bottom: rem(300);
+        }
+    
+        &--header {
+            font-size: rem(65);
+            font-family: var(--font-header);
+            padding-bottom: rem(10);
+            margin: 0;
+        }
+    
+        &--text {
+            font-size: rem(25);
+            margin: 0;
+        }
+    }
+
+    // Nav Stylings 
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: rem(20);
+
+        &__logo {
+            height: rem(80);
+            margin: rem(30) rem(25) rem(30) rem(30);
+        }
+    }
+
+    // Nav Links 
+    .nav-links {
+        display: flex;
+        list-style-type: none;
+        width: rem(500);
+        justify-content: space-around;
+        font-size: rem(20);
+        margin-bottom: rem(0);
+        
+        &__li {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            margin-right: rem(10);
+        }
+    
+        &__button {
+            width: rem(140);
+            height: rem(55);
+            border-radius: rem(30);
+            border: none;
+            background-color: var(--orange);
+            text-align: center;
+            font-size: rem(20);
+            
+        }
+    
+        &__button:hover {
+            background-color: var(--orange-state);
+            cursor: pointer;
+        }
+        
+        &__button:active {
+            background-color: #A9A9A9;
+            color: #808080;
+        }
+    
+    }
+
+    // Sub Tag styles 
+    .s2-close {
+        display: flex;
+        justify-content: flex-end;
+        grid-column: 2 / -1;
+    }
+
+    //Sub Styles  
+    .sub {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        &--header {
+            font-size: rem(50);
+            margin-bottom: rem(20);
+        }
+    
+        &--text {
+            font-size: rem(22);
+        }
+
+        &__headshot {
+            width: rem(210);
+            margin-left: rem(50);
+        }
+    }
+
+    // Project Card Responsive. 
+    .project-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+
+    //Footer 
+    .footer {
+
+        // Tags 
+        .ft-open {
+            display: flex;
+            margin-left: rem(100);
+        }
+        
+        .ft-close {
+            display: flex;
+            justify-content: end;
+            margin-right: rem(90);
+        }
+    
+        .body-close {
+            display: flex;
+            justify-content: end;
+        }
+    }
+}

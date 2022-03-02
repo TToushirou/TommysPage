@@ -21,6 +21,13 @@ footer {
     
 }
 
+.tags {
+    color: #737377;
+    font-style: italic;
+    font-size: rem(19);
+    font-family: var(--font-section);
+}
+
 // Top of site content 
 .hero {
     background-color: var(--black);
@@ -28,6 +35,24 @@ footer {
     width: 100%;
     color: var(--white);
     font-size: rem(40);
+
+    // Tag Styles 
+    .body-open {
+        margin-left: rem(30) !important;
+    }
+
+    .h1-close {
+        display: flex;
+        width: auto;
+        justify-content: end;
+    }
+
+    .p-close {
+        display: flex;
+        width: 55%;
+        justify-content: end;
+    }
+
 
     // Hero content area
     &__area {
@@ -78,16 +103,36 @@ footer {
 
     &--text {
         font-size: rem(30);
+        margin: 0;
     }
 }
 
 /////////////////////////////////////////
+
+// Tag Styles 
+.nav-open{
+    position: absolute;
+    margin: rem(0) rem(0) rem(110) rem(42);
+}
+
+.nav-close{
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    width: 92%;
+    margin-top: rem(90);
+
+    @include breakpoint(xlarge) {
+        width: 97% !important;
+    }
+}
 
 // Nav Stylings 
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: rem(20);
 
     &__logo {
         height: rem(80);
@@ -103,6 +148,8 @@ footer {
     font-size: rem(28);
     
     &__li {
+        display: flex;
+        align-items: center;
         text-decoration: none;
         margin-right: rem(10);
     }
@@ -130,75 +177,21 @@ footer {
 
 }
 
-// Nav menu Toggler Styles 
-.nav-tog {
-    visibility: hidden;
-}
-
-.wrapper {
-    visibility: visible;
-    background-color: transparent;
-    height: auto;
-    top: 0;
-    justify-content: space-between;
-}
-
-.wrapper::after {
-    visibility: hidden;
-}
-
-// Nav Trasitions 
-.nav-tog {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 30px;
-    height: 10px;
-    justify-content: space-around;
-    cursor: pointer;
-    transition: 0.5s;
-    transform: center;
-}
-  
-.nav-tog span {
-    height: 2px;
-    background-color: rgb(255, 255, 255);
-    transform-origin: center;
-    transition: 0.2s;
-}
-  
-.nav-tog span:nth-child(1) {
-    width: 100%;
-}
-  
-.nav-tog span:nth-child(2) {
-    width: 80%;
-}
-  
-.nav-tog.active span {
-    background-color: rgb(255, 255, 255);
-    position: absolute;
-    left: 0%;
-    width: 100%;
-}
-  
-.nav-tog.active span:nth-child(1) {
-    top: 40%;
-    transform: rotate(45deg);
-}
-  
-.nav-tog.active span:nth-child(2) {
-    bottom: 40%;
-    transform: rotate(-45deg);
-}
-
 ////////////////////////////////////////
+
+// Tag styles 
+.s2-close {
+    display: flex;
+    align-items: flex-end;
+}
+
 
 // About me and Project Section
 .sub {
     display: flex;
     justify-content: space-around;
     padding: rem(80);
+
 
     &__information {
         color: var(--black);
@@ -223,6 +216,11 @@ footer {
         width: rem(250);
         border-radius: rem(150);
         margin-left: rem(80);
+
+        @include breakpoint(375) {
+            margin-left: rem(0) !important;
+            margin-right: rem(6) !important;
+        }
     }
 }
 
@@ -236,6 +234,17 @@ footer {
     &--header {
         font-size: rem(50);
         margin-bottom: rem(30);
+    }
+    
+
+    .s-open {
+        display: flex;
+    }
+
+    .s-close {
+        display: flex;
+        justify-content: end;
+        margin-top: rem(30);
     }
 }
 
@@ -288,6 +297,31 @@ hr {
 ///////////////////////////////////////////////
 
 .footer {
+
+    // Tags 
+    .ft-open {
+        display: flex;
+        margin-left: rem(180);
+
+        @include breakpoint(xlarge) {
+            margin-left: rem(355);
+        }
+    }
+    
+    .ft-close {
+        display: flex;
+        justify-content: end;
+        margin-right: rem(170);
+
+        @include breakpoint(xlarge) {
+            margin-right: rem(355);
+        }
+    }
+
+    .body-close {
+        display: flex;
+        justify-content: end;
+    }
 
     &--header {
         font-size: rem(55);
